@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes por Dia</title>
+    <style>
+        body {
+            background-image:url(imagens/onda.webp);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .tabs {
+            display: grid;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+        .tab:hover {
+            background-color: blue;
+            color:white;
+        }
+        .active {
+            background-color:white;
+            color: black;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #000;
+        }
+        th{
+            background-color:blue;
+            color:white
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <h1>Cronograma diario</h1>
+    
+    <!-- Abas -->
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('Segunda')">Segunda</div>
+        <div class="tab" onclick="showTab('Serca')">Terça</div>
+        <div class="tab" onclick="showTab('Quarta')">Quarta</div>
+        <div class="tab" onclick="showTab('Quinta')">Quinta</div>
+        <div class="tab" onclick="showTab('Sexta')">Sexta</div>
+        <div class="tab" onclick="showTab('Sabado')">Sábado</div>
+    </div>
+
+    <!-- Tabelas -->
+    <div id="segunda" class="tab-content active">
+        <h2>Segunda</h2>
+        <table>
+            <tr><th>ID</th><th>Nome</th></tr>
+            <tr><td>1</td><td>Marcos Rogerio</td></tr>
+            <tr><td>2</td><td>Dalton</td></tr>
+            <tr><td>3</td><td>Paulo Gimenes</td></tr>
+        </table>
+    </div>
+
+    <div id="terca" class="tab-content">
+        <h2>Terça</h2>
+        <table>
+            <tr><th>ID</th><th>Nome</th></tr>
+            <tr><td>1</td><td>Wesley</td></tr>
+            <tr><td>2</td><td>Claudio</td></tr>
+            <tr><td>3</td><td>Andressa</td></tr>
+        </table>
+    </div>
+
+    <div id="quarta" class="tab-content">
+        <h2>Quarta</h2>
+        <table>
+            <tr><th>ID</th><th>Nome</th></tr>
+            <tr><td>1</td><td>Gislaine</td></tr>
+            <tr><td>2</td><td>Rebesco</td></tr>
+            <tr><td>3</td><td>Edivaldo</td></tr>
+        </table>
+    </div>
+
+    <div id="quinta" class="tab-content">
+        <h2>Quinta</h2>
+        <table>
+            <tr><th>ID</th><th>Nome</th></tr>
+            <tr><td>1</td><td>Wesley</td></tr>
+            <tr><td>2</td><td>Marcos Rogerio</td></tr>
+            <tr><td>3</td><td>Junior</td></tr>
+            <tr><td>4</td><td>Dalton</td></tr>
+            <tr><td>5</td><td>Paulo Gimenes</td></tr>
+            <tr><td>6</td><td>Claudio</td></tr>
+        </table>
+    </div>
+
+    <div id="sexta" class="tab-content">
+        <h2>Sexta</h2>
+        <table>
+            <tr><th>ID</th><th>Nome</th></tr>
+            <tr><td>1</td><td>Paulo</td></tr>
+            <tr><td>2</td><td>Celia</td></tr>
+            <tr><td>3</td><td>Edivaldo</td></tr>
+            <tr><td>4</td><td>Gislaine</td></tr>
+            <tr><td>5</td><td>Andressa</td></tr>
+        </table>
+    </div>
+
+    <div id="sabado" class="tab-content">
+        <h2>Sábado</h2>
+        <table>
+            <tr><th>ID</th><th>Nome</th></tr>
+            <tr><td>1</td><td>Gislaine</td></tr>
+            <tr><td>2</td><td>Rebesco</td></tr>
+            <tr><td>3</td><td>Claudio</td></tr>
+        </table>
+    </div>
+
+    <!-- Script para alternar entre as abas -->
+    <script>
+        function showTab(tabId) {
+            // Esconde todas as tabelas
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove classe ativa de todas as abas
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Exibe a tabela correspondente e destaca a aba ativa
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
